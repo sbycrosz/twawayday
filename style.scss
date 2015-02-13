@@ -1,9 +1,26 @@
 * * {
-	margin: 0 0;
-	padding:  0 0;
-	box-sizing: border-box;
+  margin: 0 0;
+  padding:  0 0;
+  box-sizing: border-box;
 }
 
 body {
-	background: lightgray;
+  animation: rainbows 40s infinite;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-family: "OpenSans", serif;
+}
+
+@-webkit-keyframes rainbows {
+  0% { background: #67b9cd; }
+  13% { background: #378a97; }
+  25% { background: #96a3b2; }
+  37% { background: #b9d137; }
+  50% { background: #f2d02f; }
+  63% { background: #ed7827; }
+  75% { background: #e04d91; }
+  87% { background: #b04995; }
+  100% { background: #67b9cd; }
 }
