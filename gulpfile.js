@@ -7,6 +7,11 @@ var gulp = require('gulp'),
     rimraf = require('gulp-rimraf'),
     deploy = require('gulp-gh-pages');
 
+var DEPLOY_OPTIONS = {
+    remoteUrl: 'git@github.com:twsgawayday/twsgawayday.github.io.git',
+    branch: 'master'
+};
+
 gulp.task('clean', function (cb) {
     return gulp.src('./build/**/*', { read: false })
         .pipe(rimraf());
@@ -58,7 +63,7 @@ gulp.task('serve', ['build'], function() {
 
 gulp.task('deploy', ['build'], function () {
     return gulp.src('./build/**/*')
-        .pipe(deploy());
+        .pipe(deploy(DEPLOY_OPTIONS));
 });
 
 gulp.task('build', ['html', 'css', 'js', 'assets']);
