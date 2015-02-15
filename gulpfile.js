@@ -48,6 +48,13 @@ gulp.task('assets', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('config', function() {
+    gulp.src(['config/**/*'])
+        .pipe(plumber(''))
+        .pipe(gulp.dest('./build'))
+        .pipe(connect.reload());
+});
+
 gulp.task('watch', function() {
   gulp.watch('*.scss', ['css']);
   gulp.watch('*.js', ['js']);
@@ -66,6 +73,6 @@ gulp.task('deploy', ['build'], function () {
         .pipe(deploy(DEPLOY_OPTIONS));
 });
 
-gulp.task('build', ['html', 'css', 'js', 'assets']);
+gulp.task('build', ['html', 'css', 'js', 'assets', 'config']);
 
 gulp.task('default', ['serve', 'watch']);
