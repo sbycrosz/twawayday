@@ -1,23 +1,23 @@
-* * {
-  margin: 0 0;
-  padding:  0 0;
+* {
+  margin: 0;
+  padding:  0;
   box-sizing: border-box;
 }
 
 body {
   font-family: "OpenSans", sans-serif;
+  min-height: 100vh;
   background: gray;
-  font-size: 10px;
-  height:100%;
-}
-
-html {
-  height:100%;
+  font-size: 70px;
+  background-image: url("assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #container {
-  height: 100%;
-
+  width: 40%;
+  float: right;
+  margin-right: 10%;
   background: white;
   display: flex;
   align-items: center;
@@ -25,7 +25,8 @@ html {
   flex-direction: column;
   text-align: center;
   text-transform: uppercase;
-  padding: 100px 0;
+  min-height: calc(100vh);
+  padding: 2em 0;
 }
 
 .introduction {
