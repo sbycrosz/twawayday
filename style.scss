@@ -6,25 +6,76 @@
 
 body {
   font-family: "OpenSans", sans-serif;
+  background: gray;
+  font-size: 10px;
+  height:100%;
+}
+
+html {
+  height:100%;
 }
 
 #container {
   height: 100%;
+
+  background: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 100px 0;
 }
 
-.dictionary-quote {
-  max-width: 600px;
-  width: 100%;
-  padding: 0 40px;
-  .title {
+.introduction {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-size: 300;
+
+  strong {
+    display: block;
+    font-size: 3.3rem;
+    font-weight: 800;
+  }
+}
+
+.logo {
+  margin: 10px 0;
+  padding: 80px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 27rem;
+}
+
+.tagline {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+.invitation {
+  font-weight: 300;
+  font-size:  1.2rem;
+  line-height: 2.5rem;
+
+  .date,
+  .location {
+    font-weight: 800;
     font-size: 1.5rem;
   }
+}
 
-  .description {
-    font-style: italic;
-  }
+a {
+  padding: 10px 30px;
+  background: #cf2424;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
 }
