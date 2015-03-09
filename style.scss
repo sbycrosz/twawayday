@@ -147,12 +147,13 @@ a{
     text-transform: uppercase;
     margin: 0 auto;
     margin-bottom: 2rem;
-    max-width: 50%;
+    max-width: 65%;
     h5{
       margin-bottom: 0.5rem;
     }
     a{
       font-size: 1rem;
+      white-space: nowrap;
     }
   }
   h3{
@@ -160,7 +161,7 @@ a{
   }
 }
 .coming-soon{
-  max-width: 55%;
+  max-width: 65%;
   margin: 0 auto;
 }
 footer{
