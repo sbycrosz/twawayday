@@ -47,7 +47,11 @@ gulp.task('assets', function() {
         .pipe(gulp.dest('./build/assets'))
         .pipe(connect.reload());
 });
-
+gulp.task('appcache', function () {
+    gulp.src('*.appcache')
+        .pipe(gulp.dest('./build'))
+        .pipe(connect.reload());
+})
 gulp.task('config', function() {
     gulp.src(['config/**/*'])
         .pipe(plumber(''))
@@ -73,6 +77,6 @@ gulp.task('deploy', function () {
         .pipe(deploy(DEPLOY_OPTIONS));
 });
 
-gulp.task('build', ['html', 'css', 'js', 'assets', 'config']);
+gulp.task('build', ['html', 'css', 'js', 'assets','appcache', 'config']);
 
 gulp.task('default', ['serve', 'watch']);

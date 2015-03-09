@@ -12,7 +12,6 @@
 }
 html{
   font-size: 16px;
-  max-width: 340px;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -25,7 +24,7 @@ body {
   background-size: cover;
 }
 main{
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   text-align: center;
   margin: 0 auto;
   width: 100vw;
@@ -72,7 +71,7 @@ a{
 
 
 .theme{
-  margin-top: 3em;
+  margin-top: 3rem;
   text-align: left;
   margin-left: 0.5rem;
   .theme-title{
@@ -80,7 +79,7 @@ a{
     text-transform: uppercase;
   }
   .define, .usage{
-    margin: 0.5em 5px;
+    margin: 0.5rem 5px;
     font-weight: 300;
   }
   dt{
@@ -98,7 +97,7 @@ a{
   }
   .usage{
     margin-top: 0.25rem;
-    font-size: 0.8em;
+    font-size: 0.8rem;
   }
   .expample{
     font-size: 0.9rem;
@@ -117,9 +116,6 @@ a{
     font-style: normal;
     text-transform: uppercase;
     margin-bottom: 0.25rem;
-  }
-  .coords{
-
   }
   .rsvp-block{
     display: inline-block;
