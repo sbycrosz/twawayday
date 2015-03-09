@@ -29,7 +29,7 @@ main{
   text-align: center;
   margin: 0 auto;
   width: 100vw;
-  padding: 10px;
+  padding: 0.8rem;
   padding-top: 10vh;
 }
 h5{
@@ -50,14 +50,20 @@ a{
 
 .intro{
   text-transform: uppercase;
-  .tw{
-    margin-top: 1em;
+  .introduction{
+    margin-bottom: 2em;
+    font-size: 0.8rem;
+    font-style: italic;
     font-weight: 300;
+  }
+  .tw{
+    font-weight: 400;
     font-size: 1.15rem;
   }
   .away-day{
     font-weight: 800;
     letter-spacing: 5px;
+    font-size: 2rem;
   }
   .tagline{
     font-style: italic;
@@ -89,7 +95,7 @@ a{
     font-weight: 300;
   }
   dt{
-    margin: 0.5em 0;
+    margin: 0.5rem 0;
   }
   dfn{
     font-style: normal;
@@ -121,32 +127,33 @@ a{
     font-weight: 800;
     font-style: normal;
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
   }
   .rsvp-block{
     display: inline-block;
     width: 60%;
-    max-width: 50rem;
+    max-width: 10rem;
     padding: 0.5rem;
     background-color: rgb(242, 45, 37);
     color: white;
     font-weight: 300;
-    margin: 2em 0;
+    margin: 2rem 0;
   }
   .rsvp-link{
     text-transform: uppercase;
     margin: 0 auto;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
     max-width: 80%;
     h5{
-      margin-bottom: 0.5em;
+      margin-bottom: 0.5rem;
     }
     a{
       font-size: 1rem;
     }
   }
   h3{
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 footer{
@@ -156,28 +163,54 @@ footer{
 }
 
 @media screen and (min-width: 30em) and (max-width: 45em) {
+  html{
+    font-size: 18px;
+  }
   main {
+    min-width: 25rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .theme-content{
     width: 80%;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 45em) and (max-width: 90em) {
+  html{
+    font-size: 20px;
+  }
   main {
     width: 60vw;
     max-width: 40%;
+    min-width: 25rem;
     float: right;
     margin-right: 10vw;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .theme-content{
+    width: 85%;
+    margin: 0 auto;
+    max-width: 24rem;
+  }
 }
 @media screen and (min-width: 90em) {
+  html{
+    font-size: 25px;
+  }
   main {
     width: 30em;
+    min-width: 25rem;
     float: right;
     margin-right: 10vw;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+  .theme-content{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 30rem;
   }
 }
