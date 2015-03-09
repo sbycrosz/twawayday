@@ -38,6 +38,8 @@ h5{
 }
 a{
   color: rgb(238, 135, 58);
+  font-style: italic;
+  font-weight: 400;
   &:hover{
     color: darken(rgb(238, 135, 58), 20%);
     text-decoration: none;
@@ -129,6 +131,7 @@ a{
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
   }
   .rsvp-block{
     display: inline-block;
@@ -144,7 +147,7 @@ a{
     text-transform: uppercase;
     margin: 0 auto;
     margin-bottom: 2rem;
-    max-width: 80%;
+    max-width: 50%;
     h5{
       margin-bottom: 0.5rem;
     }
@@ -156,10 +159,15 @@ a{
     font-size: 1rem;
   }
 }
+.coming-soon{
+  max-width: 55%;
+  margin: 0 auto;
+}
 footer{
   font-size: 0.5rem;
   color: rgba(100, 100, 100, 0.8);
   margin-top: 3rem;
+  font-weight: 300;
 }
 
 @media screen and (min-width: 30em) and (max-width: 45em) {
