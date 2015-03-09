@@ -1,81 +1,166 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
-
 * {
   margin: 0;
   padding:  0;
   box-sizing: border-box;
 }
-
+.stretch_it{
+    white-space: nowrap;
+}
+.justify{
+    text-align:justify;
+}
+html{
+  font-size: 16px;
+  max-width: 340px;
+}
 body {
   font-family: "Open Sans", sans-serif;
   min-height: 100vh;
+  min-width: 100vw;
   background: gray;
-  font-size: 70px;
   background-image: url("assets/background.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
-
-#container {
-  width: 40%;
-  float: right;
-  margin-right: 10%;
-  background: rgba(255, 255, 255, 0.90);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
+main{
+  background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+  padding: 10px;
+  padding-top: 10vh;
+}
+h5{
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+a{
+  color: rgb(238, 135, 58);
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.intro{
   text-transform: uppercase;
-  min-height: calc(100vh);
-  padding: 2em 0;
-}
-
-.introduction {
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1rem;
-}
-
-.title {
-  font-size: 1.9rem;
-  font-size: 300;
-
-  strong {
-    display: block;
-    font-size: 3.3rem;
+  .tw{
+    margin-top: 1em;
+    font-weight: 300;
+    font-size: 1.15rem;
+  }
+  .away-day{
     font-weight: 800;
+    letter-spacing: 5px;
+  }
+  .tagline{
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.75rem;
+  }
+  .strech{
+    overflow: hidden;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+  img{
+    width: calc(100% - 20px);
+    max-width: 20rem;
   }
 }
 
-.logo {
-  margin: 10px 0;
-  width: 27rem;
-}
 
-.tagline {
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.1rem;
-}
-
-.invitation {
-  font-weight: 300;
-  font-size:  1.2rem;
-  line-height: 2.5rem;
-
-  .date,
-  .location {
-    font-weight: 800;
-    font-size: 1.5rem;
+.theme{
+  margin-top: 3em;
+  text-align: left;
+  margin-left: 0.5rem;
+  .theme-title{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .define, .usage{
+    margin: 0.5em 5px;
+    font-weight: 300;
+  }
+  dt{
+    margin: 0.5em 0;
+  }
+  dfn{
+    font-style: normal;
+    font-size: 1.2rem;
+    strong{
+      font-weight: 800;
+    }
+  }
+  dl{
+    font-size: 0.8rem;
+  }
+  .usage{
+    margin-top: 0.25rem;
+    font-size: 0.8em;
+  }
+  .expample{
+    font-size: 0.9rem;
+    font-weight: 300;
   }
 }
 
-a {
-  padding: 10px 30px;
-  background: #cf2424;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 300;
-  font-style: italic;
+.invitation{
+  margin-top: 3em;
+  h5{
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  .date, .location{
+    font-weight: 800;
+    font-style: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  .coords{
+
+  }
+  .rsvp-block{
+    display: inline-block;
+    width: 60%;
+    max-width: 50rem;
+    padding: 0.5rem;
+    background-color: rgb(242, 45, 37);
+    color: white;
+    font-weight: 300;
+    margin: 2em 0;
+  }
+  .rsvp-link{
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    max-width: 80%;
+    h5{
+      margin-bottom: 0.5em;
+    }
+    a{
+      font-size: 1rem;
+    }
+  }
+  h3{
+    font-size: 1em;
+  }
+}
+footer{
+  font-size: 0.5rem;
+  color: rgba(100, 100, 100, 0.8);
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 30em) and (max-width: 90em){
+  main{
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 90em) and (max-width: 300em){
+  main{
+    background-color: red;
+  }
 }

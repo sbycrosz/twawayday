@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 312.6 595 216.6" enable-background="new 0 312.6 595 216.6" xml:space="preserve">
+	 viewBox="0 312.6 595 216.6" enable-background="new 0 312.6 595 216.6" xml:space="preserve" height="100px" width="300px">
 <line id="line_1_" fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="528.9" x2="595" y2="528.9"/>
 <g id="can">
 	<circle fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" cx="527.4" cy="419.1" r="64.3"/>

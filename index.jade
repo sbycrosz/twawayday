@@ -1,26 +1,73 @@
 doctype html
 head
   title TW SG Away Day 2015
+  meta(charset="utf-8")
+  meta(name="description", content="Invitaion for Thoughtworks Singapore Away day 2015")
+  meta(name="keywords", content="Thoughtworks Singapore Away day 2015")
   link(rel="stylesheet", type="text/css", href="style.css")
 body
-  #container
-    .introduction You are cordially invited to
-
-    .logo-container
-      .title
-        | Thoughtworks Singapore
-        strong Away Day 2015
-
-      .logo
+  main#container
+    section.intro
+      h5.introduction You are cordially invited to
+      h2.tw.strech Thoughtworks Singapore
+      h1.away-day Away Day 2015
+      figure.logo
         img(src="assets/logo.svg", alt="can!")
-      .tagline Cannot also can
+        figcaption.tagline.strech Cannot also can
+    section.theme
+      h3.theme-title Inagural theme
+      dl.define
+        dt
+          dfn
+            strong Can
+          |  [kan;
+          em  unstressed kuh
+          |  n]
+        dd
+          ol
+            li to be able to; have ability, power or skill to
+            li to know how to
+            li to have the power or means to
+      p Proper usage
+      ol.usage
+        li
+          |Can meh?
+          em.meaning  [Can you or can't you],
+        li
+          |Can lah
+          em.meaning   [Yes],
+        li
+          |Can ah?
+          em.meaning  [Can you or can't you],
+        li
+          |Can can
+          em.meaning  [It will be done, no matter how impossible].
+      p Example
+      .expample
+        | &#8220;100% utilization? Can can. Cannot also can lah.&#8221
 
-    .invitation
-      | Please make your presence known
-      .date 18:00, Friday 22 May
-      | at
-      .location Changi Cove, Singapore
+    section.invitation
+      h5 Please make your presence known
+      .coords
+        h3
+          date.date 18:00, Friday 22 May
+        h5 at
+        h3
+          address.location Changi Cove, Singapore
 
-    a RSVP at https://2015.twawayday.sg
+      .rsvp-block
+        em RSVP BELOW
+      .rsvp-link
+        h5 Register your attendance
+        a(href="//goo.gl/xa2xmd", title="Register your attendance by filling this form") https://goo.gl/xa2xmd
+      .rsvp-link
+        h5 Submissions for talks, workshops, lightning talks and Pete's cookery class
+        a(href="//goo.gl/l6zfve", title="Sign up for talks, workshops and lightning talks by filling this form") https://goo.gl/l6zfve
 
-    script(type="text/javascript", src="script.js")
+    h3 Further information coming soon!
+
+    footer
+      small Photo credit &#169; KANGXI504
+
+script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js")
+script(type="text/javascript", src="script.js")
