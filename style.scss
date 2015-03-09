@@ -153,14 +153,29 @@ footer{
   margin-top: 3rem;
 }
 
-@media screen and (min-width: 30em) and (max-width: 90em){
-  main{
+@media screen and (min-width: 30em) and (max-width: 45em) {
+  main {
     width: 80%;
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 90em) and (max-width: 300em){
-  main{
-    background-color: red;
+
+@media screen and (min-width: 45em) and (max-width: 90em) {
+  main {
+    width: 60vw;
+    max-width: 40%;
+    float: right;
+    margin-right: 10vw;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 90em) {
+  main {
+    width: 30em;
+    float: right;
+    margin-right: 10vw;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
