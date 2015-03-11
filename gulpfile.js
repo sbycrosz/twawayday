@@ -68,6 +68,7 @@ gulp.task('watch', function() {
 
 gulp.task('serve', ['build'], function() {
   connect.server({
+    root: 'build',
     livereload: true
   });
 });
