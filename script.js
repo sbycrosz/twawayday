@@ -16,7 +16,12 @@ $.fn.strech_text = function(){
 
         one_line.css({'letter-spacing': ltr_spacing});
     } else {
-        one_line.contents().unwrap();
+        one_line.contents();
+        one_line.unwrap();
+        elmt.css({
+            'font-size': '1rem',
+            'font-weight': '300'
+        });
         elmt.addClass('justify');
     }
 };
