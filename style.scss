@@ -155,12 +155,16 @@ a{
   .rsvp-block{
     display: inline-block;
     width: 60%;
-    max-width: 10rem;
+    max-width: 11rem;
     padding: 0.5rem;
     background-color: rgb(242, 45, 37);
     color: white;
     font-weight: 300;
     margin: 2rem 0;
+    text-transform: uppercase;
+    strong{
+      font-weight: 600;
+    }
   }
   .rsvp-link{
     text-transform: uppercase;
