@@ -5,20 +5,18 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     plumber = require('gulp-plumber'),
     rimraf = require('gulp-rimraf'),
-    deploy = require('gulp-gh-pages');
+    deploy = require('gulp-gh-pages'),
+    rmdir = require('rimraf'),
+    tmpDirectory = require('os').tmpDir(),
+    runSequence = require('run-sequence');
 
 var DEPLOY_OPTIONS = {
     remoteUrl: 'git@github.com:twsgawayday/twsgawayday.github.io.git',
     branch: 'master'
 };
 
-gulp.task('clean', function (cb) {
-    return gulp.src('./build/**/*', { read: false })
-        .pipe(rimraf());
-});
-
-gulp.task('css', function () {
-    gulp.src('*.scss')
+gulp.task('build:css', function () {
+    return gulp.src('*.scss')
         .pipe(plumber(''))
         .pipe(autoprefixer())
         .pipe(sass())
@@ -26,58 +24,67 @@ gulp.task('css', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('html', function () {
-    gulp.src('*.jade')
+gulp.task('build:html', function () {
+    return gulp.src('*.jade')
         .pipe(plumber(''))
         .pipe(jade())
         .pipe(gulp.dest('./build'))
         .pipe(connect.reload());
 });
 
-gulp.task('js', function () {
-    gulp.src(['*.js', '!gulpfile.js'])
+gulp.task('build:js', function () {
+    return gulp.src(['*.js', '!gulpfile.js'])
         .pipe(plumber(''))
         .pipe(gulp.dest('./build'))
         .pipe(connect.reload());
 });
 
-gulp.task('assets', function() {
-    gulp.src(['assets/**/*'])
+gulp.task('build:copyAssets', function() {
+    return gulp.src(['assets/**/*'])
         .pipe(plumber(''))
         .pipe(gulp.dest('./build/assets'))
         .pipe(connect.reload());
 });
-gulp.task('appcache', function () {
-    gulp.src('*.appcache')
+
+gulp.task('build:appcache', function () {
+    return gulp.src('*.appcache')
         .pipe(gulp.dest('./build'))
         .pipe(connect.reload());
 })
-gulp.task('config', function() {
-    gulp.src(['config/**/*'])
-        .pipe(plumber(''))
-        .pipe(gulp.dest('./build'))
-        .pipe(connect.reload());
-});
 
 gulp.task('watch', function() {
-  gulp.watch('*.scss', ['css']);
-  gulp.watch('*.js', ['js']);
-  gulp.watch('*.assets', ['assets']);
-  gulp.watch('*.jade', ['html']);
+    gulp.watch('*.scss', ['build:css']);
+    gulp.watch('*.js', ['build:js']);
+    gulp.watch('*.assets', ['build:copyAssets']);
+    gulp.watch('*.jade', ['build:html']);
 });
 
 gulp.task('serve', ['build'], function() {
-  connect.server({
-    root: 'build',
-    livereload: true
-  });
+    connect.server({
+        root: 'build',
+        livereload: true
+    });
 });
 
-gulp.task('deploy', function () {
+gulp.task('deploy:gh-pages', function () {
     return gulp.src('./build/**/*')
         .pipe(deploy(DEPLOY_OPTIONS));
 });
 
-gulp.task('build', ['html', 'css', 'js', 'assets','appcache', 'config']);
+gulp.task('deploy', function(cb) {
+    runSequence(['clean:tempFolder', 'clean:build'], 'build', 'deploy:gh-pages', cb);
+});
+
+gulp.task('clean:tempFolder', function () {
+    var tmpRepoDirectory = tmpDirectory + 'tmpRepo';
+    rmdir(tmpRepoDirectory, function(error){});
+});
+
+gulp.task('clean:build', function () {
+    return gulp.src('./build/*', { read: false })
+        .pipe(rimraf());
+});
+
+gulp.task('build', ['build:html', 'build:css', 'build:js', 'build:copyAssets', 'build:appcache']);
 
 gulp.task('default', ['serve', 'watch']);
